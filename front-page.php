@@ -8,7 +8,7 @@ get_sidebar();
 
 	<tbody>
 	<tr>
-		<td><b><a href="http://twitter.com/funaabconnect">Twitter</a></b> / <b><a href="http://facebook.com/funaabconnect">Facebook</a></b> / <b><a href="<?=get_page_uri(10);?>">How To Advertise</a></b></td>
+		<td><b><a href="http://twitter.com/funaabconnect">Twitter</a></b> / <b><a href="http://facebook.com/funaabconnect">Facebook</a></b> / <b><a href="<?=get_page_uri(8);?>">How To Advertise</a></b></td>
 	</tr>
 	<tr>
 		<td class="featured w">

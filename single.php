@@ -24,7 +24,7 @@ get_header(); ?>
             get_template_part( 'content', get_post_format() );
 
             // If comments are open or we have at least one comment, load up the comment template.
-            if ( comments_open() || get_comments_number() ) :
+            if (!is_page() && (comments_open() || get_comments_number()) ) :
                 echo '<h2>Comments</h2>';
 	            get_template_part('comments');
             endif;

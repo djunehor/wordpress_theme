@@ -11,8 +11,8 @@
         ?></title>
 
     <link href="<?php echo get_bloginfo('template_directory'); ?>/style.css" rel="stylesheet">
-    <link href="<? bloginfo('url');?>/feed" rel="alternate" type="application/rss+xml" title="Nairaland">
-    <meta name="google-site-verification" content="KUABan1rWBhK3Jb2LePxHAv00FEbbM1wQMAAgsN-EyA">
+    <link href="<? bloginfo('url');?>/feed" rel="alternate" type="application/rss+xml" title="<? bloginfo('url'); ?>">
+   
 	<?php wp_head(); ?>
 </head>
 <?php
@@ -25,10 +25,10 @@ $user = wp_get_current_user();
         <tr>
             <td class="grad">
                 <h1><a href="<?php bloginfo('url'); ?>" class="g" title="<?php bloginfo('name');?>"><?php bloginfo('name');?></a></h1>
-                <?php if($user): ?>
-                Welcome, <a href="<?=get_author_posts_url( $user->ID, $user->user_nicename ); ?>" class="user"><?=$user->user_nicename;?></a>: <a href="<?=bloginfo('url'); ?>/wp-admin/profile.php">Edit Profile</a>
+                <?php if($user->ID): ?>
+                Welcome, <a href="<?=get_author_posts_url( $user->ID, $user->user_nicename ); ?>" class="user"><?=$user->user_nicename;?></a>: <a href="<?=bloginfo('url'); ?>/wp-admin/profile.php">Edit Profile</a> / <a href="//funaabconnect.com/dashboard/">Dashboard</a> / <a href="//funaabconnect.com/account/">Account</a>
 	            <?php else: ?>
-                    Welcome, <a class="user">Guest</a> / <a href="<?=wp_login_url(); ?>">Login</a> / <a href="<?=wp_registration_url(); ?>">Register</a>
+                    Welcome, <a class="user" >Guest</a> / <a href="<?=wp_login_url(); ?>">Login</a> / <a href="<?=wp_registration_url(); ?>">Register</a>
                 <?php endif; ?>
                 <br><b>Stats: </b><?=number_format(count_users()['total_users']);?> members, <?=number_format(wp_count_posts()->publish);?> topics. <b>Date</b>: <?=date('d M Y').' at '.date('g:i a'); ?> / <a href="<?=wp_logout_url() ?>">Logout</a>
                 <p></p>
